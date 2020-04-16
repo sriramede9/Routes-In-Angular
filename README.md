@@ -42,3 +42,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### **Adding navigation based on assigned routes**
 
 - in the navigation bar use \_routerLink="/" ,routerLink="/users" -
+
+### Adding Css Styling
+
+- use `<li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" > <a routerLink="/">Home</a> </li>` to have a focuseed style active bar while navigation
