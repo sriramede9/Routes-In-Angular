@@ -46,3 +46,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Adding Css Styling
 
 - use `<li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" > <a routerLink="/">Home</a> </li>` to have a focuseed style active bar while navigation
+
+### How to navigate to url on button click
+
+** `OnClick() { // this.routers.navigate(["/servers"], { relativeTo: this.route }); will append /servers to current url this.routers.navigate(["/servers"]); }` **
+
+- Here relativeto:route->activeRoute-angular/core will append /servers to current path\*
+- ['/servers'] will navigate to localhost:port/servers\*
