@@ -53,3 +53,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - Here relativeto:route->activeRoute-angular/core will append /servers to current path\*
 - ['/servers'] will navigate to localhost:port/servers\*
+
+### Extracting data from /users/id/name
+
+- \*\* `constructor(private router: ActivatedRoute) {}
+
+  ngOnInit(): void {
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+  this.user = {
+  id: this.router.snapshot.params["id"],
+  name: this.router.snapshot.params["name"],
+  };
+  }`\*\*
+
+- **`this.router.params.subscribe((params: Params) => { this.user.id = params["id"]; this.user.name = params["name"]; });`**
