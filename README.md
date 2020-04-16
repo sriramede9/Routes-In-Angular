@@ -25,4 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-"# Routes-In-Angular" 
+"# Routes-In-Angular"
+
+## Step One
+
+### **How to assign routes **
+
+- in the app.module.ts
+- `const appRoutes: Routes = [ { path: "", component: HomeComponent }, { path: "users", component: UsersComponent }, { path: "servers", component: ServersComponent }, ];`
+- in the ngModule imports section `imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],`
+
+- in the app.component.html replace '<app-component></app-component>' with `<router-outlet></router-outlet>`
+
+## Step two
+
+### **Adding navigation based on assigned routes**
+
+- in the navigation bar use \_routerLink="/" ,routerLink="/users" -
