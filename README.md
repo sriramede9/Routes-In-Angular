@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - in the app.module.ts
 - `const appRoutes: Routes = [ { path: "", component: HomeComponent }, { path: "users", component: UsersComponent }, { path: "servers", component: ServersComponent }, ];`
-- in the ngModule imports section `imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],`
+- in the ngModule imports section add RouterModule `imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],`
 
 - in the app.component.html replace '<app-component></app-component>' with `<router-outlet></router-outlet>`
 
@@ -41,7 +41,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### **Adding navigation based on assigned routes**
 
-- in the navigation bar use \_routerLink="/" ,routerLink="/users" -
+- in the navigation bar use \_routerLink="/" ,routerLink="/users" instead of href in a tag-
 
 ### Adding Css Styling
 
@@ -67,4 +67,27 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   };
   }`\*\*
 
-- **`this.router.params.subscribe((params: Params) => { this.user.id = params["id"]; this.user.name = params["name"]; });`**
+  also in the app.module.ts `{ path: "users/:id/:name", component: UserComponent }`
+
+* **`this.router.params.subscribe((params: Params) => { this.user.id = params["id"]; this.user.name = params["name"]; });`**
+
+### Adding more to the URL /servers/:id/edit + ?allowEdit=1 + #loading
+
+- add corresponding route in the app.module.ts
+
+add this to append to the requested url
+\*\*`
+<a [resourceLink]="['/servers',5,'edit']"
+[queryParams]="{allowEdit:1}"
+[fragment]="loading"
+
+> </a>
+> `**
+
+- add this to append call by an event
+
+`onclick(1)`
+
+## on click event on ts file
+
+`onclick(edit_id:number){ this.route.navigate(['/servers',edit_id,'edit'],{queryParams:{allowEdit:'1'},fragment:'loading'}) }`
