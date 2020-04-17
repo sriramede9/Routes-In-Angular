@@ -91,3 +91,7 @@ add this to append to the requested url
 ## on click event on ts file
 
 `onclick(edit_id:number){ this.route.navigate(['/servers',edit_id,'edit'],{queryParams:{allowEdit:'1'},fragment:'loading'}) }`
+
+## How to extract query params and fragments from url
+
+`console.log(this.route.queryParams); console.log(this.route.fragment); //we can subsribe to them as well // this.route.queryParams.subscribe() //this.route.fragment.subscribe()`
